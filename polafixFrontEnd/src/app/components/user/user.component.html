@@ -1,0 +1,21 @@
+<div class="spacer"></div>
+
+<div *ngIf="error" class="error-message">{{ errorMessage }}</div>
+
+<div>
+  <ng-container *ngFor="let section of sections">
+    <p>{{ section.title }}</p>
+    <div [class]="section.class">
+      <ul *ngFor="let serie of section.series">
+        <span>
+          <p (click)="getSerieUserInlist(serie)">
+            {{ serie.title }}
+          </p>
+        </span>
+      </ul>
+    </div>
+    <div class="spacer"></div>
+  </ng-container>
+
+  <div class="advertising">BANNER PUBBLICITARIO</div>
+</div>
